@@ -7,12 +7,19 @@
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { App } from "./App";
+import  App  from "./App";
+import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./auth";
+import "./index.css";
 
 const elem = document.getElementById("root")!;
 const app = (
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </BrowserRouter>
   </StrictMode>
 );
 
